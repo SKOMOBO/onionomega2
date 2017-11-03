@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "haxe",
             "args":[
-                "-php", "bin", "Main"
+                "-php", "bin", "-main", "Main"
             ],
             "problemMatcher": [
                 "$haxe"

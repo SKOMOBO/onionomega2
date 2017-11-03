@@ -5,11 +5,15 @@
   * @found at: https://gist.githubusercontent.com/Immortal-/a18f58ac5c21ba27921b7626b5a8b06e/raw/df8e70665523c2a06b503954d10943560d5c189f/OmegaPHP.php
   */
 
-import sys.io.Process;
+// import sys.io.Process;
+import Sys.command;
 class Omega{
 
-    static function execute(command: String): String{
-        return new Process(command).stdout.readAll().toString().split(': ')[1];
+    static function execute(instruction: String): Int{
+        // return new Process(command).stdout.readAll().toString().split(': ')[1];
+        return command(instruction);
+
+        // read stdout() function
     }
 
     /**
@@ -49,5 +53,19 @@ class Omega{
     static public function SetPWM(pin, hZ, dutyCyclePercent)
     {
         return execute("fast-gpio pwm " + pin + " " + hZ + " " + dutyCyclePercent + " 2>&1");
+    }
+
+    /**
+     *  [Description] Writes data to I2C bus
+     */
+    static public function WriteI2C(){
+
+    }
+
+    /**
+     *  [Description] Reads data from I2C bus
+     */
+    static public function ReadI2C(){
+
     }
 }
