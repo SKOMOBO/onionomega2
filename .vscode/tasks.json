@@ -8,6 +8,7 @@
             "type": "shell",
             "command": "haxe",
             "args":[
+                // "config.hxml"
                 "-php", "bin", "-main", "Main"
             ],
             "problemMatcher": [

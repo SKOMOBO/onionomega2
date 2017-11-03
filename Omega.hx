@@ -68,4 +68,18 @@ class Omega{
     static public function ReadI2C(){
 
     }
+
+    /**
+     *  [Description] Writes data to Serial ports 1 because 0 is used for UART I think
+     */
+    static public function WriteSerial(msg: String){
+        return execute('echo "' + msg + '" > /dev/ttyS1');
+    }
+
+    /**
+     *  [Description] Reads data from I2C bus
+     */
+    static public function ReadSerial(): Int{
+        return execute('cat /dev/ttyS1');
+    }
 }
