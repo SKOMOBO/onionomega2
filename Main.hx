@@ -1,6 +1,7 @@
 class Main {
   static public function main():Void {
-    Omega.SetPin(44, "High");
+    // Omega.SetPin(44, "High");
+    trace(Omega.ReadPin(6));
 
     // add check for I2C, maybe with screen
 

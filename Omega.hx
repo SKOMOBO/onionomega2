@@ -33,7 +33,7 @@ class Omega{
             value = 0;
         }
 
-        return execute("fast-gpio set " + pin + " " + value + " 2>&1");
+        return execute('fast-gpio set $pin $value 2>&1');
         
     }
     /**
@@ -42,7 +42,7 @@ class Omega{
     */
     static public function ReadPin(pin: Int)
     {
-        return execute("fast-gpio read " + pin + " 2>&1");
+        return execute('fast-gpio read $pin 2>&1');
     }
     /**
     * @MethodName: SetPWM
@@ -52,7 +52,7 @@ class Omega{
     */
     static public function SetPWM(pin, hZ, dutyCyclePercent)
     {
-        return execute("fast-gpio pwm " + pin + " " + hZ + " " + dutyCyclePercent + " 2>&1");
+        return execute('fast-gpio pwm $pin $hZ $dutyCyclePercent 2>&1');
     }
 
     /**
@@ -65,19 +65,19 @@ class Omega{
     /**
      *  [Description] Reads data from I2C bus
      */
-    static public function ReadI2C(){
-
+    static public function ReadI2C(address, register){
+        return execute('i2cget -y 0 $address $register')
     }
 
     /**
      *  [Description] Writes data to Serial ports 1 because 0 is used for UART I think
      */
     static public function WriteSerial(msg: String){
-        return execute('echo "' + msg + '" > /dev/ttyS1');
+        return execute('echo "$msg" > /dev/ttyS1');
     }
 
     /**
-     *  [Description] Reads data from I2C bus
+     *  [Description] Reads data from Serial port
      */
     static public function ReadSerial(): Int{
         return execute('cat /dev/ttyS1');
