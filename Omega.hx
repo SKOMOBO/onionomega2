@@ -59,14 +59,14 @@ class Omega{
      *  [Description] Writes data to I2C bus
      */
     static public function WriteI2C(address, register, value){
-        return execute('i2cset -y 0 $address $register $value')
+        return execute('i2cset -y 0 $address $register $value');
     }
 
     /**
      *  [Description] Reads data from I2C bus
      */
     static public function ReadI2C(address, register){
-        return execute('i2cget -y 0 $address $register')
+        return execute('i2cget -y 0 $address $register');
     }
 
     /**
