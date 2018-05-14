@@ -1,7 +1,11 @@
 class Main {
   static public function main():Void {
     // Omega.SetPin(44, "Low");
-    Omega.ReadPin(1);
+    // Omega.ReadPin(1);
+
+
+    // reading a temperature sensor, make sure this hex value is correct, if not then try 0x028 and 40
+    Omega.ReadI2C("0x28", "0x28");
 
     // add check for I2C, maybe with screen
 
