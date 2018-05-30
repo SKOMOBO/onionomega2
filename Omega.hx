@@ -7,6 +7,7 @@
 
 // import sys.io.Process;
 import Sys.command;
+
 class Omega{
 
     static function execute(instruction: String): Int{
